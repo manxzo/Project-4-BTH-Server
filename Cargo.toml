@@ -4,14 +4,20 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-actix-web="4.9.0"
-dotenvy = "0.15.7"
-serde = { version = "1.0", features = ["derive"] }
-serde_json = "1.0"
-sqlx = { version = "0.8.3", features = ["runtime-tokio-native-tls", "postgres", "macros"] }
-tokio = { version = "1.43.0", features = ["full"] }
-jsonwebtoken = "9.3.1"
-chrono = { version = "0.4.26", features = ["serde"] }
-argon2 = "0.5"
-rand = "0.9.0"  
-futures-util = "0.3"
+actix="*"
+actix-web="*"
+dotenvy = "*"
+serde = { version = "*", features = ["derive"] }
+serde_json = "*"
+sqlx = { version = "*", features = ["runtime-tokio-native-tls", "postgres", "macros"] }
+tokio = { version = "*", features = ["full"] }
+jsonwebtoken = "*"
+chrono = { version = "*", features = ["serde"] }
+argon2 = "*"
+rand = "*"  
+futures-util = "*"
+futures-channel = "*"
+tokio-tungstenite = "*"
+uuid = { version = "*", features = ["v4", "serde"] }
+actix-web-actors="*"
+geo="*"
