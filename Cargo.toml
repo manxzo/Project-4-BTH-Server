@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-actix="*"
+actix="0.13.5"
 actix-web="*"
 dotenvy = "*"
 serde = { version = "*", features = ["derive"] }
@@ -17,9 +17,9 @@ argon2 = "*"
 rand = "*"  
 futures-util = "*"
 futures-channel = "*"
-tokio-tungstenite = "*"
 uuid = { version = "*", features = ["v4", "serde"] }
 actix-web-actors="*"
 geoutils="*"
 strum="*"
 strum_macros="*"
+lazy_static="*"

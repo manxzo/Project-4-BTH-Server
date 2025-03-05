@@ -6,9 +6,8 @@ mod models;
 mod routes;
 
 use actix_web::{App, HttpServer, web};
-
-use middleware::auth_middleware::AuthMiddleware;
 use handlers::ws::init_ws_routes;
+use middleware::auth_middleware::AuthMiddleware;
 use routes::{user_auth::config_user_auth_routes,user_info::config_user_info_routes,sponsor::config_sponsor_routes,matching::config_matching_routes};
 use std::io::Result as IoResult;
 use crate::db::connect_db;
@@ -35,8 +34,9 @@ async fn main() -> IoResult<()> {
                             .configure(config_sponsor_routes)
                             .configure(config_matching_routes)
                     )
+                .wrap(AuthMiddleware)
+                .configure(init_ws_routes)
             )
-            .configure(init_ws_routes)
     })
     .bind("localhost:3000")?
     .run()
